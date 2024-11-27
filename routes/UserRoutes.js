@@ -28,11 +28,15 @@ router.post("/signup", signup);
 router.post("/login", login);
 router.post(
   "/createpaymentorder",
-  auth,
-  isbuyer,
+  // auth,
+  // isbuyer,
   paymentController.createOrder
 );
-router.post("/success", auth, isbuyer, paymentController.verifyPayment);
+router.post(
+  "/success",
+  //  auth, isbuyer,
+  paymentController.verifyPayment
+);
 router.post(
   "/addproduct",
   upload.array("images", 5),
